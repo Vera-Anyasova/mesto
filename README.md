@@ -22,4 +22,4 @@
 <html lang="ru">
 ```
 
-Cсылка на GitHub Pages:
+Cсылка на GitHub Pages: https://vera-anyasova.github.io/mesto/
