@@ -1,0 +1,7 @@
+.element {
+  width: 100%;
+  object-fit: cover;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}

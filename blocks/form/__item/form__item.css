@@ -1,0 +1,16 @@
+.form__item {
+  max-width: 358px;
+  font-size: 14px;
+  line-height: 1.21;
+  border: 0;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 0 0 13px;
+}
+
+@media screen and (max-width: 715px) {
+  .form__item {
+    max-width: 238px;
+    margin-bottom: -3px;
+  }
+}
