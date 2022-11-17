@@ -1,9 +1,10 @@
-.form__item_job {
+.form__item_theme_job {
+  max-width: 358px;
   margin-bottom: 48px;
 }
 
 @media screen and (max-width: 715px) {
-  .form__item_job {
+  .form__item_theme_job {
     margin-bottom: 45px;
   }
 }

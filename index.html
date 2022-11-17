@@ -26,16 +26,24 @@
           <div class="profile__info">
             <div class="profile__content">
               <h1 class="profile__title">Жак-Ив Кусто</h1>
-              <button type="button" class="profile__edit-button"></button>
+              <button
+                type="button"
+                class="profile__edit-button"
+                aria-label="Редактировать."
+              ></button>
             </div>
             <p class="profile__subtitle">Исследователь океана</p>
           </div>
         </div>
-        <button type="button" class="profile__add-button"></button>
+        <button
+          type="button"
+          class="profile__add-button"
+          aria-label="Добавить карточку."
+        ></button>
       </section>
       <section class="elements page__element">
-        <ul class="element">
-          <li class="element__item">
+        <ul class="elements__list">
+          <li class="element">
             <img
               src="./images/karachevsk.png"
               alt="Древнее каменное строение на фоне лесного массива."
@@ -43,12 +51,14 @@
             />
             <div class="element__place">
               <h2 class="element__title">Карачаевск</h2>
-              <div class="element__like element__like_active"></div>
+              <button
+                type="button"
+                class="element__like"
+                aria-label="Поставить лайк."
+              ></button>
             </div>
           </li>
-        </ul>
-        <ul class="element">
-          <li class="element__item">
+          <li class="element">
             <img
               src="./images/elbrus.png"
               alt="Горные вершины на фоне заката."
@@ -56,12 +66,14 @@
             />
             <div class="element__place">
               <h2 class="element__title">Гора Эльбрус</h2>
-              <div class="element__like element__like_active"></div>
+              <button
+                type="button"
+                class="element__like"
+                aria-label="Поставить лайк."
+              ></button>
             </div>
           </li>
-        </ul>
-        <ul class="element">
-          <li class="element__item">
+          <li class="element">
             <img
               src="./images/dombai.png"
               alt="Острые пики гор, покрытые снегом."
@@ -69,12 +81,14 @@
             />
             <div class="element__place">
               <h2 class="element__title">Домбай</h2>
-              <div class="element__like element__like_active"></div>
+              <button
+                type="button"
+                class="element__like"
+                aria-label="Поставить лайк."
+              ></button>
             </div>
           </li>
-        </ul>
-        <ul class="element">
-          <li class="element__item">
+          <li class="element">
             <img
               src="./images/elbrus.png"
               alt="Горные вершины на фоне заката."
@@ -82,12 +96,14 @@
             />
             <div class="element__place">
               <h2 class="element__title">Гора Эльбрус</h2>
-              <div class="element__like element__like_active"></div>
+              <button
+                type="button"
+                class="element__like"
+                aria-label="Поставить лайк."
+              ></button>
             </div>
           </li>
-        </ul>
-        <ul class="element">
-          <li class="element__item">
+          <li class="element">
             <img
               src="./images/dombai.png"
               alt="Острые пики гор, покрытые снегом."
@@ -95,12 +111,14 @@
             />
             <div class="element__place">
               <h2 class="element__title">Домбай</h2>
-              <div class="element__like element__like_active"></div>
+              <button
+                type="button"
+                class="element__like"
+                aria-label="Поставить лайк."
+              ></button>
             </div>
           </li>
-        </ul>
-        <ul class="element">
-          <li class="element__item">
+          <li class="element">
             <img
               src="./images/karachevsk.png"
               alt="Древнее каменное строение на фоне лесного массива."
@@ -108,7 +126,11 @@
             />
             <div class="element__place">
               <h2 class="element__title">Карачаево-Черкессия</h2>
-              <div class="element__like element__like_active"></div>
+              <button
+                type="button"
+                class="element__like"
+                aria-label="Поставить лайк."
+              ></button>
             </div>
           </li>
         </ul>
@@ -119,34 +141,37 @@
     </footer>
     <div class="popup">
       <div class="popup__container">
-        <div class="popup__button"></div>
-        <div class="popup__form">
-          <form class="form">
-            <h2 class="form__heading">Редактировать профиль</h2>
-            <input
-              type="text"
-              class="form__item form__item_name"
-              name="name"
-              required
-            />
-            <input
-              type="text"
-              class="form__item form__item_job"
-              name="job"
-              required
-            />
-            <button
-              type="submit"
-              class="form__button"
-              name="submit_btn"
-              value="Сохранить"
-            >
-              Сохранить
-            </button>
-          </form>
-        </div>
+        <button
+          type="button"
+          class="popup__button"
+          aria-label="Закрыть форму."
+        ></button>
+        <form action="" method="post" name="popup-form" class="form">
+          <h2 class="form__heading">Редактировать профиль</h2>
+          <input
+            type="text"
+            class="form__item form__item_theme_name"
+            name="name"
+            required
+          />
+          <input
+            type="text"
+            class="form__item form__item_theme_job"
+            name="job"
+            required
+          />
+          <button
+            type="submit"
+            class="form__button"
+            name="submit_btn"
+            value="Сохранить"
+            aria-label="Сохранить введённые данные."
+          >
+            Сохранить
+          </button>
+        </form>
       </div>
     </div>
-    <script src="./scripts/script.js"></script>
+    <script src="./scripts/index.js"></script>
   </body>
 </html>

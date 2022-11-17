@@ -1,4 +1,3 @@
-.element__like_active:disabled {
-  background-color: #000;
-  color: #fff;
+.element__like_active {
+  background-image: url(../../../../images/like-active.svg);
 }
