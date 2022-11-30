@@ -3,12 +3,14 @@ const popupElementCard = document.querySelector(".popup_card");
 const popupElementPhoto = document.querySelector(".popup_photo");
 const closeButton = popupElement.querySelector(".popup__button");
 const closeButtonCard = popupElementCard.querySelector(".popup__button-card");
-const editButton = document.querySelector(".profile__edit-button");
-const addButton = document.querySelector(".profile__add-button");
-const formElement = document.querySelector(".form");
+const buttonOpenEditProfileForm = document.querySelector(
+  ".profile__edit-button"
+);
+const buttonOpenAddCardForm = document.querySelector(".profile__add-button");
+const formEditProfile = document.querySelector(".form");
 const formElementCard = document.querySelector(".form-card");
-const nameInput = formElement.querySelector(".form__item_theme_name");
-const jobInput = formElement.querySelector(".form__item_theme_job");
+const nameInput = formEditProfile.querySelector(".form__item_theme_name");
+const jobInput = formEditProfile.querySelector(".form__item_theme_job");
 const titleInput = formElementCard.querySelector(".form__item_theme_title");
 const linkInput = formElementCard.querySelector(".form__item_theme_link");
 const profileName = document.querySelector(".profile__title");
@@ -34,7 +36,7 @@ const closePopup = function (popup) {
 
 // Форма редактирования профиля
 
-editButton.addEventListener("click", function () {
+buttonOpenEditProfileForm.addEventListener("click", function () {
   nameInput.value = profileName.textContent;
   jobInput.value = profileJob.textContent;
   openPopup(popupElement);
@@ -44,7 +46,7 @@ closeButton.addEventListener("click", function () {
   closePopup(popupElement);
 });
 
-function formSubmitHandler(evt) {
+function submitEditProfileForm(evt) {
   evt.preventDefault();
   profileName.textContent = nameInput.value;
   profileJob.textContent = jobInput.value;
@@ -52,7 +54,7 @@ function formSubmitHandler(evt) {
   closePopup(popupElement);
 }
 
-formElement.addEventListener("submit", formSubmitHandler);
+formEditProfile.addEventListener("submit", submitEditProfileForm);
 
 // Форма добавления карточки
 
@@ -65,6 +67,7 @@ const createCard = (item) => {
 
   elementTitle.textContent = item.name;
   elementPhoto.src = item.link;
+  elementPhoto.alt = item.name;
 
   elementLike.addEventListener("click", handleLikeButtonClick);
   deleteButton.addEventListener("click", handleDeleteButtonClick);
@@ -103,7 +106,7 @@ const handleFormCardSubmit = (evt) => {
   evt.target.reset();
 };
 
-addButton.addEventListener("click", function () {
+buttonOpenAddCardForm.addEventListener("click", function () {
   openPopup(popupElementCard);
 });
 closeButtonCard.addEventListener("click", function () {
