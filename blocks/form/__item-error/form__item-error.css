@@ -1,0 +1,10 @@
+.form__item-error {
+  display: none;
+  box-sizing: border-box;
+  font-size: 12px;
+  line-height: 1.2;
+  color: #f00;
+  position: absolute;
+  top: 35px;
+  left: 0;
+}

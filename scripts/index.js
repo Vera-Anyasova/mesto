@@ -127,3 +127,23 @@ const handleElementPhotoClick = (item) => {
 closeButtonPhoto.addEventListener("click", function () {
   closePopup(popupElementPhoto);
 });
+
+// Закрытие попапа нажатием на Esc
+
+const handleKeyDown = (evt) => {
+  if (evt.key === "Escape") {
+    closePopup(document.querySelector(".popup_opened"));
+  }
+};
+
+document.addEventListener("keydown", handleKeyDown);
+
+// Закрытие попапа кликом на оверлей
+
+const handlePopupOverlay = (evt) => {
+  if (evt.target.classList.contains("popup_opened")) {
+    closePopup(evt.target);
+  }
+};
+
+document.addEventListener("click", handlePopupOverlay);

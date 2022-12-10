@@ -55,22 +55,34 @@
           class="popup__button"
           aria-label="Закрыть форму."
         ></button>
-        <form class="form" name="popup-form">
+        <form class="form" name="popup-form" novalidate>
           <h2 class="form__heading">Редактировать профиль</h2>
-          <input
-            type="text"
-            class="form__item form__item_theme_name"
-            name="name"
-            placeholder="Имя"
-            required
-          />
-          <input
-            type="text"
-            class="form__item form__item_theme_job"
-            name="job"
-            placeholder="Вид деятельности"
-            required
-          />
+          <label class="form__field">
+            <input
+              id="name-input"
+              type="text"
+              class="form__item form__item_theme_name"
+              name="name"
+              placeholder="Имя"
+              minlength="2"
+              maxlength="40"
+              required
+            />
+            <span class="form__item-error" id="name-input-error"></span>
+          </label>
+          <label class="form__field">
+            <input
+              id="job-input"
+              type="text"
+              class="form__item form__item_theme_job"
+              name="job"
+              placeholder="Вид деятельности"
+              minlength="2"
+              maxlength="200"
+              required
+            />
+            <span class="form__item-error" id="job-input-error"></span>
+          </label>
           <button
             type="submit"
             class="form__button"
@@ -90,22 +102,32 @@
           class="popup__button popup__button-card"
           aria-label="Закрыть форму."
         ></button>
-        <form class="form form-card" name="popup-form-card">
+        <form class="form form-card" name="popup-form-card" novalidate>
           <h2 class="form__heading">Новое место</h2>
-          <input
-            type="text"
-            class="form__item form__item_theme_title"
-            name="name"
-            placeholder="Название"
-            required
-          />
-          <input
-            type="text"
-            class="form__item form__item_theme_link"
-            name="job"
-            placeholder="Ссылка на картинку"
-            required
-          />
+          <label class="form__field">
+            <input
+              id="title-input"
+              type="text"
+              class="form__item form__item_theme_title"
+              name="title"
+              placeholder="Название"
+              minlength="2"
+              maxlength="30"
+              required
+            />
+            <span class="form__item-error" id="title-input-error"></span>
+          </label>
+          <label class="form__field">
+            <input
+              id="link-input"
+              type="url"
+              class="form__item form__item_theme_link"
+              name="link"
+              placeholder="Ссылка на картинку"
+              required
+            />
+            <span class="form__item-error" id="link-input-error"></span>
+          </label>
           <button
             type="submit"
             class="form__button"
@@ -113,7 +135,7 @@
             value="Сохранить"
             aria-label="Сохранить введённые данные."
           >
-            Сохранить
+            Создать
           </button>
         </form>
       </div>
@@ -148,6 +170,7 @@
       </li>
     </template>
     <script src="./scripts/cards.js"></script>
+    <script src="./scripts/validate.js"></script>
     <script src="./scripts/index.js"></script>
   </body>
 </html>
