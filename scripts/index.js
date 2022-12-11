@@ -6,7 +6,7 @@ const buttonOpenEditProfileForm = document.querySelector(
   ".profile__edit-button"
 );
 const buttonOpenAddCardForm = document.querySelector(".profile__add-button");
-const formEditProfile = document.querySelector(".form__profile");
+const formEditProfile = document.querySelector(".form-profile");
 const formElementCard = document.querySelector(".form-card");
 const nameInput = formEditProfile.querySelector(".form__item_theme_name");
 const jobInput = formEditProfile.querySelector(".form__item_theme_job");
