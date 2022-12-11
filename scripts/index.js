@@ -1,26 +1,23 @@
+const popups = document.querySelectorAll(".popup");
 const popupElement = document.querySelector(".popup_profile");
 const popupElementCard = document.querySelector(".popup_card");
 const popupElementPhoto = document.querySelector(".popup_photo");
-const closeButton = popupElement.querySelector(".popup__button");
-const closeButtonCard = popupElementCard.querySelector(".popup__button-card");
 const buttonOpenEditProfileForm = document.querySelector(
   ".profile__edit-button"
 );
 const buttonOpenAddCardForm = document.querySelector(".profile__add-button");
-const formEditProfile = document.querySelector(".form");
+const formEditProfile = document.querySelector(".form__profile");
 const formElementCard = document.querySelector(".form-card");
 const nameInput = formEditProfile.querySelector(".form__item_theme_name");
 const jobInput = formEditProfile.querySelector(".form__item_theme_job");
 const titleInput = formElementCard.querySelector(".form__item_theme_title");
 const linkInput = formElementCard.querySelector(".form__item_theme_link");
+const submitButton = formElementCard.querySelector(".form__button");
 const profileName = document.querySelector(".profile__title");
 const profileJob = document.querySelector(".profile__subtitle");
 const openPhoto = document.querySelector(".element__photo");
 const elementPopupTitle = popupElementPhoto.querySelector(".popup__title");
 const elementPopupPhoto = popupElementPhoto.querySelector(".popup__image");
-const closeButtonPhoto = popupElementPhoto.querySelector(
-  ".popup__button-photo"
-);
 const cardsElementList = document.querySelector(".elements__list");
 const templateCards = document
   .querySelector("#template-cards")
@@ -28,11 +25,34 @@ const templateCards = document
 
 const openPopup = function (popup) {
   popup.classList.add("popup_opened");
+  document.addEventListener("keydown", handleKeyDown);
 };
 
 const closePopup = function (popup) {
   popup.classList.remove("popup_opened");
+  document.removeEventListener("keydown", handleKeyDown);
 };
+
+// Закрытие попапа нажатием на Esc
+
+function handleKeyDown(evt) {
+  if (evt.key === "Escape") {
+    closePopup(document.querySelector(".popup_opened"));
+  }
+}
+
+// Закрытие попапа кликом на оверлей и на крестик
+
+popups.forEach((popup) => {
+  popup.addEventListener("mousedown", (evt) => {
+    if (evt.target.classList.contains("popup_opened")) {
+      closePopup(popup);
+    }
+    if (evt.target.classList.contains("popup__button")) {
+      closePopup(popup);
+    }
+  });
+});
 
 // Форма редактирования профиля
 
@@ -40,10 +60,6 @@ buttonOpenEditProfileForm.addEventListener("click", function () {
   nameInput.value = profileName.textContent;
   jobInput.value = profileJob.textContent;
   openPopup(popupElement);
-});
-
-closeButton.addEventListener("click", function () {
-  closePopup(popupElement);
 });
 
 function submitEditProfileForm(evt) {
@@ -108,10 +124,10 @@ const handleFormCardSubmit = (evt) => {
 
 buttonOpenAddCardForm.addEventListener("click", function () {
   openPopup(popupElementCard);
+  submitButton.classList.add("form__button_inactive");
+  submitButton.disabled = "disabled";
 });
-closeButtonCard.addEventListener("click", function () {
-  closePopup(popupElementCard);
-});
+
 formElementCard.addEventListener("submit", handleFormCardSubmit);
 
 // Открытие попапа с картинкой
@@ -123,27 +139,3 @@ const handleElementPhotoClick = (item) => {
 
   openPopup(popupElementPhoto);
 };
-
-closeButtonPhoto.addEventListener("click", function () {
-  closePopup(popupElementPhoto);
-});
-
-// Закрытие попапа нажатием на Esc
-
-const handleKeyDown = (evt) => {
-  if (evt.key === "Escape") {
-    closePopup(document.querySelector(".popup_opened"));
-  }
-};
-
-document.addEventListener("keydown", handleKeyDown);
-
-// Закрытие попапа кликом на оверлей
-
-const handlePopupOverlay = (evt) => {
-  if (evt.target.classList.contains("popup_opened")) {
-    closePopup(evt.target);
-  }
-};
-
-document.addEventListener("click", handlePopupOverlay);
