@@ -20,7 +20,6 @@ const linkInput = formElementCard.querySelector(".form__item_theme_link");
 const submitButton = formElementCard.querySelector(".form__button");
 const profileName = document.querySelector(".profile__title");
 const profileJob = document.querySelector(".profile__subtitle");
-const openPhoto = document.querySelector(".element__photo");
 const elementPopupTitle = popupElementPhoto.querySelector(".popup__title");
 const elementPopupPhoto = popupElementPhoto.querySelector(".popup__image");
 const cardsElementList = document.querySelector(".elements__list");
@@ -124,10 +123,3 @@ const formValidatorCard = new FormValidator(settingForm, formElementCard);
 const formValidatorProfile = new FormValidator(settingForm, formEditProfile);
 formValidatorCard.enableValidation();
 formValidatorProfile.enableValidation();
-
-function disableButtonFormValidator(evt) {
-  evt.preventDefault();
-}
-
-formElementCard.addEventListener("submit", disableButtonFormValidator);
-formEditProfile.addEventListener("submit", disableButtonFormValidator);
