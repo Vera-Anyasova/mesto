@@ -1,23 +1,22 @@
 import { initialCards } from "./cards.js";
 import { Card } from "./card.js";
-import { settingForm } from "./validateList.js";
+import { validationSettings } from "./validationSettings.js";
 import { FormValidator } from "./formValidator.js";
 
 const popups = document.querySelectorAll(".popup");
-const popupElement = document.querySelector(".popup_profile");
+const popupElementProfile = document.querySelector(".popup_profile");
 const popupElementCard = document.querySelector(".popup_card");
 const popupElementPhoto = document.querySelector(".popup_photo");
-const buttonOpenEditProfileForm = document.querySelector(
+const buttonOpenEditProfilePopup = document.querySelector(
   ".profile__edit-button"
 );
-const buttonOpenAddCardForm = document.querySelector(".profile__add-button");
+const buttonOpenAddCardPopup = document.querySelector(".profile__add-button");
 const formEditProfile = document.querySelector(".form-profile");
 const formElementCard = document.querySelector(".form-card");
 const nameInput = formEditProfile.querySelector(".form__item_theme_name");
 const jobInput = formEditProfile.querySelector(".form__item_theme_job");
 const titleInput = formElementCard.querySelector(".form__item_theme_title");
 const linkInput = formElementCard.querySelector(".form__item_theme_link");
-const submitButton = formElementCard.querySelector(".form__button");
 const profileName = document.querySelector(".profile__title");
 const profileJob = document.querySelector(".profile__subtitle");
 const elementPopupTitle = popupElementPhoto.querySelector(".popup__title");
@@ -46,10 +45,10 @@ function handleKeyDown(evt) {
 
 popups.forEach((popup) => {
   popup.addEventListener("mousedown", (evt) => {
-    if (evt.target.classList.contains("popup_opened")) {
-      closePopup(popup);
-    }
-    if (evt.target.classList.contains("popup__button")) {
+    if (
+      evt.target.classList.contains("popup_opened") ||
+      evt.target.classList.contains("popup__button")
+    ) {
       closePopup(popup);
     }
   });
@@ -57,10 +56,10 @@ popups.forEach((popup) => {
 
 // Форма редактирования профиля
 
-buttonOpenEditProfileForm.addEventListener("click", function () {
+buttonOpenEditProfilePopup.addEventListener("click", function () {
   nameInput.value = profileName.textContent;
   jobInput.value = profileJob.textContent;
-  openPopup(popupElement);
+  openPopup(popupElementProfile);
 });
 
 function submitEditProfileForm(evt) {
@@ -68,7 +67,7 @@ function submitEditProfileForm(evt) {
   profileName.textContent = nameInput.value;
   profileJob.textContent = jobInput.value;
 
-  closePopup(popupElement);
+  closePopup(popupElementProfile);
 }
 
 formEditProfile.addEventListener("submit", submitEditProfileForm);
@@ -99,10 +98,9 @@ function handleFormCardSubmit(evt) {
   evt.target.reset();
 }
 
-buttonOpenAddCardForm.addEventListener("click", function () {
+buttonOpenAddCardPopup.addEventListener("click", function () {
   openPopup(popupElementCard);
-  submitButton.classList.add("form__button_inactive");
-  submitButton.disabled = "disabled";
+  formValidatorCard.disableSubmitButton();
 });
 
 formElementCard.addEventListener("submit", handleFormCardSubmit);
@@ -119,7 +117,14 @@ function handleElementPhotoClick(name, link) {
 
 // Валидация форм
 
-const formValidatorCard = new FormValidator(settingForm, formElementCard);
-const formValidatorProfile = new FormValidator(settingForm, formEditProfile);
+const formValidatorCard = new FormValidator(
+  validationSettings,
+  formElementCard
+);
+const formValidatorProfile = new FormValidator(
+  validationSettings,
+  formEditProfile
+);
+
 formValidatorCard.enableValidation();
 formValidatorProfile.enableValidation();

@@ -1,10 +1,18 @@
 export class Card {
-  constructor(item, templateSelector, handleElementPhotoClick) {
+  constructor(
+    item,
+    templateSelector,
+    handleElementPhotoClick,
+    photoElement,
+    buttonLike
+  ) {
     this._text = item.name;
-    this._image = item.link;
+    this._imageLink = item.link;
     this._alt = item.name;
     this._templateSelector = templateSelector;
     this._handleElementPhotoClick = handleElementPhotoClick;
+    this._photoElement = photoElement;
+    this._buttonLike = buttonLike;
   }
 
   _getTemplateCard() {
@@ -12,6 +20,8 @@ export class Card {
       .querySelector(this._templateSelector)
       .content.querySelector(".element")
       .cloneNode(true);
+    this._photoElement = cardElement.querySelector(".element__photo");
+    this._buttonLike = cardElement.querySelector(".element__like");
 
     return cardElement;
   }
@@ -21,18 +31,16 @@ export class Card {
     this._setEventListeners();
 
     this._element.querySelector(".element__title").textContent = this._text;
-    this._element.querySelector(".element__photo").src = this._image;
-    this._element.querySelector(".element__photo").alt = this._text;
+    this._photoElement.src = this._imageLink;
+    this._photoElement.alt = this._text;
 
     return this._element;
   }
 
   _setEventListeners() {
-    this._element
-      .querySelector(".element__like")
-      .addEventListener("click", (evt) => {
-        this._handleLikeButtonClick(evt);
-      });
+    this._buttonLike.addEventListener("click", () => {
+      this._handleLikeButtonClick();
+    });
 
     this._element
       .querySelector(".element__btn-delete")
@@ -40,15 +48,13 @@ export class Card {
         this._handleDeleteButtonClick();
       });
 
-    this._element
-      .querySelector(".element__photo")
-      .addEventListener("click", () => {
-        this._handleElementPhotoClick(this._text, this._image);
-      });
+    this._photoElement.addEventListener("click", () => {
+      this._handleElementPhotoClick(this._text, this._imageLink);
+    });
   }
 
-  _handleLikeButtonClick(evt) {
-    evt.target.classList.toggle("element__like_active");
+  _handleLikeButtonClick() {
+    this._buttonLike.classList.toggle("element__like_active");
   }
 
   _handleDeleteButtonClick() {
