@@ -1,18 +1,10 @@
 export class Card {
-  constructor(
-    item,
-    templateSelector,
-    handleElementPhotoClick,
-    photoElement,
-    buttonLike
-  ) {
+  constructor(item, templateSelector, handleElementPhotoClick) {
     this._text = item.name;
     this._imageLink = item.link;
     this._alt = item.name;
     this._templateSelector = templateSelector;
     this._handleElementPhotoClick = handleElementPhotoClick;
-    this._photoElement = photoElement;
-    this._buttonLike = buttonLike;
   }
 
   _getTemplateCard() {
