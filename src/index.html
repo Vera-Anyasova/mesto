@@ -5,12 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mesto</title>
-    <link rel="stylesheet" href="./pages/index.css" />
   </head>
   <body class="page">
     <header class="header">
       <img
-        src="./images/header-logo.svg"
+        src="<%=require('./images/header-logo.svg')%>"
         alt="Место Россия"
         class="header__logo"
       />
@@ -19,7 +18,7 @@
       <section class="profile page__profile">
         <div class="profile__place">
           <img
-            src="./images/cousteau.png"
+            src="<%=require('./images/cousteau.png')%>"
             alt="Французский исследователь Мирового океана Жак-Ив Кусто."
             class="profile__avatar"
           />
@@ -88,7 +87,6 @@
             class="form__button"
             name="submit_btn"
             value="Сохранить"
-            aria-label="Сохранить введённые данные."
           >
             Сохранить
           </button>
@@ -109,7 +107,7 @@
               id="title-input"
               type="text"
               class="form__item form__item_theme_title"
-              name="title"
+              name="name"
               placeholder="Название"
               minlength="2"
               maxlength="30"
@@ -133,7 +131,6 @@
             class="form__button"
             name="submit_btn"
             value="Сохранить"
-            aria-label="Сохранить введённые данные."
           >
             Создать
           </button>
@@ -169,10 +166,5 @@
         </div>
       </li>
     </template>
-    <script type="module" src="./scripts/cards.js"></script>
-    <script type="module" src="./scripts/card.js"></script>
-    <script type="module" src="./scripts/validateList.js"></script>
-    <script type="module" src="./scripts/formValidator.js"></script>
-    <script type="module" src="./scripts/index.js"></script>
   </body>
 </html>
