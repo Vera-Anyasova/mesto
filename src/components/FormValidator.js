@@ -6,6 +6,12 @@ export class FormValidator {
     this._inputErrorClass = validationSettings.inputErrorClass;
     this._errorClass = validationSettings.errorClass;
     this._formElement = formElement;
+    this._inputs = Array.from(
+      this._formElement.querySelectorAll(this._inputSelector)
+    );
+    this._buttonElement = this._formElement.querySelector(
+      this._submitButtonSelector
+    );
   }
 
   _showInputError(inputElement, errorMessage) {
@@ -49,13 +55,6 @@ export class FormValidator {
   }
 
   _setEventListeners = () => {
-    this._inputs = Array.from(
-      this._formElement.querySelectorAll(this._inputSelector)
-    );
-    this._buttonElement = this._formElement.querySelector(
-      this._submitButtonSelector
-    );
-
     this._toggleFormButonState();
 
     this._inputs.forEach((inputElement) => {
