@@ -109,7 +109,7 @@
 /*!*********************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/element/__like/element__like.css ***!
   \*********************************************************************************************************************************************************************/
-.element__like{background-color:transparent;background-image:url(images/like.f9cbbc232f4ed178be38.svg);background-repeat:no-repeat;background-size:contain;border:0;height:19px;margin:5px 5px 0 0;min-width:22px;padding:0}.element__like:hover{cursor:pointer;opacity:.5}
+.element__like{background-color:transparent;background-image:url(images/like.f9cbbc232f4ed178be38.svg);background-repeat:no-repeat;background-size:contain;border:0;height:19px;margin:0;min-width:22px;padding:0}.element__like:hover{cursor:pointer;opacity:.5}
 /*!*****************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/footer/__copyright/footer__copyright.css ***!
   \*****************************************************************************************************************************************************************************/
@@ -161,7 +161,7 @@
 /*!*************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/element/__number/element__number.css ***!
   \*************************************************************************************************************************************************************************/
-.element__number{color:#000;font-size:13px;line-height:1.23;text-align:center;width:10px}
+.element__number{color:#000;font-size:13px;line-height:1.23;margin:0;text-align:center}
 /*!******************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/form/__item-error/_active/form__item-error_active.css ***!
   \******************************************************************************************************************************************************************************************/
