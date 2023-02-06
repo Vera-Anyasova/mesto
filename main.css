@@ -205,7 +205,7 @@
 /*!*****************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/popup/__btn-delete/popup__btn-delete.css ***!
   \*****************************************************************************************************************************************************************************/
-.popup__btn-delete{background:#000;border:0;border-radius:2px;box-sizing:border-box;color:#fff;font-size:18px;line-height:1.22;margin:0 36px 36px;padding:14px 0 18px;text-align:center;width:358px}.popup__btn-delete:hover{cursor:pointer;opacity:.8}@media screen and (max-width:715px){.popup__btn-delete{font-size:14px;margin:0 22px 24px;max-width:238px;padding-bottom:14px}}
+.popup__btn-delete{background:#000;border:0;border-radius:2px;box-sizing:border-box;color:#fff;font-size:18px;line-height:1.22;padding:14px 0 18px;text-align:center;width:358px}.popup__btn-delete:hover{cursor:pointer;opacity:.8}@media screen and (max-width:715px){.popup__btn-delete{font-size:14px;margin:0 22px 24px;max-width:238px;padding-bottom:14px}}
 /*!*******************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/popup/_opened/popup_opened.css ***!
   \*******************************************************************************************************************************************************************/
