@@ -61,15 +61,15 @@
 /*!*******************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/profile/__icon-edit/profile__icon-edit.css ***!
   \*******************************************************************************************************************************************************************************/
-.profile__icon-edit{align-items:center;display:flex;justify-content:center;padding-right:30px;width:120px}
+.profile__icon-edit{height:120px;padding-right:30px;position:relative;width:120px}
 /*!*************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/profile/__avatar/profile__avatar.css ***!
   \*************************************************************************************************************************************************************************/
-.profile__avatar{border-radius:50%;height:120px;-o-object-fit:cover;object-fit:cover;opacity:1;padding-right:30px;width:120px;z-index:-1}.profile__avatar:hover{cursor:pointer;opacity:.8}@media screen and (max-width:715px){.profile__avatar{padding:3.75px 99px 3.75px 101px}}
+.profile__avatar{border-radius:50%;height:120px;left:0;-o-object-fit:cover;object-fit:cover;opacity:1;padding-right:30px;position:absolute;top:0;width:120px;z-index:1}.profile__avatar:hover{cursor:pointer;opacity:.8}@media screen and (max-width:715px){.profile__avatar{padding:3.75px 99px 3.75px 101px}}
 /*!***************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/profile/__button-avatar/profile__button-avatar.css ***!
   \***************************************************************************************************************************************************************************************/
-.profile__button-avatar{align-items:center;background:url(images/edit.a086f758840ae814ecde.svg) no-repeat 50%;border:0;height:26px;justify-content:center;width:26px}
+.profile__button-avatar{background:url(images/edit.a086f758840ae814ecde.svg) no-repeat 50%;border:0;height:26px;left:47px;position:absolute;top:47px;width:26px;z-index:-1}
 /*!*********************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/profile/__info/profile__info.css ***!
   \*********************************************************************************************************************************************************************/
@@ -85,7 +85,7 @@
 /*!***********************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/profile/__edit-button/profile__edit-button.css ***!
   \***********************************************************************************************************************************************************************************/
-.profile__edit-button{align-items:center;background:url(images/edit-button.af236f6cf67005f1d7aa.svg);background-repeat:no-repeat;background-size:cover;border:0;height:24px;justify-content:center;padding:0;width:24px}.profile__edit-button:hover{cursor:pointer;opacity:.6}@media screen and (max-width:715px){.profile__edit-button{height:18px;width:18px}}
+.profile__edit-button{background:url(images/edit-button.af236f6cf67005f1d7aa.svg);background-repeat:no-repeat;background-size:cover;border:0;height:24px;padding:0;width:24px}.profile__edit-button:hover{cursor:pointer;opacity:.6}@media screen and (max-width:715px){.profile__edit-button{height:18px;width:18px}}
 /*!*****************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[2].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/blocks/profile/__subtitle/profile__subtitle.css ***!
   \*****************************************************************************************************************************************************************************/
