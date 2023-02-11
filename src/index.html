@@ -17,21 +17,28 @@
     <main class="content">
       <section class="profile page__profile">
         <div class="profile__place">
-          <img
-            src="<%=require('./images/cousteau.png')%>"
-            alt="Французский исследователь Мирового океана Жак-Ив Кусто."
-            class="profile__avatar"
-          />
+          <div class="profile__icon-edit">
+            <img
+              src=""
+              alt="Французский исследователь Мирового океана Жак-Ив Кусто."
+              class="profile__avatar"
+            />
+            <button
+              type="button"
+              class="profile__button-avatar"
+              aria-label="Редактировать аватар."
+            ></button>
+          </div>
           <div class="profile__info">
             <div class="profile__content">
-              <h1 class="profile__title">Жак-Ив Кусто</h1>
+              <h1 class="profile__title"></h1>
               <button
                 type="button"
                 class="profile__edit-button"
                 aria-label="Редактировать."
               ></button>
             </div>
-            <p class="profile__subtitle">Исследователь океана</p>
+            <p class="profile__subtitle"></p>
           </div>
         </div>
         <button
@@ -71,10 +78,10 @@
           </label>
           <label class="form__field">
             <input
-              id="job-input"
+              id="about-input"
               type="text"
               class="form__item form__item_theme_job"
-              name="job"
+              name="about"
               placeholder="Вид деятельности"
               minlength="2"
               maxlength="200"
@@ -132,7 +139,7 @@
             name="submit_btn"
             value="Сохранить"
           >
-            Создать
+            Сохранить
           </button>
         </form>
       </div>
@@ -148,6 +155,57 @@
         <h2 class="popup__title"></h2>
       </div>
     </div>
+    <div class="popup popup_avatar">
+      <div class="popup__container">
+        <button
+          type="button"
+          class="popup__button popup__button-avatar"
+          aria-label="Закрыть форму."
+        ></button>
+        <form class="form form-avatar" name="popup-form-card" novalidate>
+          <h2 class="form__heading">Обновить аватар</h2>
+          <label class="form__field">
+            <input
+              id="link-input"
+              type="url"
+              class="form__item form__item_theme_avatar"
+              name="link"
+              placeholder="Ссылка на картинку"
+              required
+            />
+            <span class="form__item-error" id="link-input-error"></span>
+          </label>
+          <button
+            type="submit"
+            class="form__button"
+            name="submit_btn"
+            value="Сохранить"
+          >
+            Сохранить
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="popup popup_delete">
+      <div class="popup__container">
+        <form class="form form-delete" name="popup-form-delete" novalidate>
+          <button
+            type="button"
+            class="popup__button popup__button-close"
+            aria-label="Закрыть изображение."
+          ></button>
+          <h2 class="popup__heading">Вы уверены?</h2>
+          <button
+            type="submit"
+            class="popup__btn-delete"
+            name="submit_btn"
+            value="Подтвердить удаление"
+          >
+            Да
+          </button>
+        </form>
+      </div>
+    </div>
     <template id="template-cards">
       <li class="element">
         <img src="#" alt="#" class="element__photo" />
@@ -158,11 +216,14 @@
         ></button>
         <div class="element__place">
           <h2 class="element__title"></h2>
-          <button
-            type="button"
-            class="element__like"
-            aria-label="Поставить лайк."
-          ></button>
+          <div class="element__theme-like">
+            <button
+              type="button"
+              class="element__like"
+              aria-label="Поставить лайк."
+            ></button>
+            <p class="element__number"></p>
+          </div>
         </div>
       </li>
     </template>

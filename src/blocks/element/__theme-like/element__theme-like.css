@@ -1,0 +1,4 @@
+.element__them-like {
+  display: flex;
+  flex-direction: column;
+}
