@@ -6,7 +6,6 @@ export class Section {
 
   renderItems = (items) => {
     items.forEach(this._renderer);
-    items.reverse();
   };
 
   addItem(cardElement) {

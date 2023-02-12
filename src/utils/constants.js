@@ -7,12 +7,6 @@ export const buttonOpenAddCardPopup = document.querySelector(
 export const formEditProfile = document.querySelector(".form-profile");
 export const formEditAvatar = document.querySelector(".form-avatar");
 export const formElementCard = document.querySelector(".form-card");
-export const nameInput = formEditProfile.querySelector(
-  ".form__item_theme_name"
-);
-export const aboutInput = formEditProfile.querySelector(
-  ".form__item_theme_job"
-);
 export const profileName = document.querySelector(".profile__title");
 export const profileJob = document.querySelector(".profile__subtitle");
 export const profileAvatar = document.querySelector(".profile__avatar");

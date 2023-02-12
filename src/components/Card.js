@@ -25,6 +25,7 @@ export class Card {
     this._photoElement = cardElement.querySelector(".element__photo");
     this._buttonLike = cardElement.querySelector(".element__like");
     this._buttonDelete = cardElement.querySelector(".element__btn-delete");
+    this._likeCounter = cardElement.querySelector(".element__number");
 
     return cardElement;
   }
@@ -81,7 +82,6 @@ export class Card {
 
   countNewLike(newData) {
     this._likes = newData.likes;
-    this._element.querySelector(".element__number").textContent =
-      this._likes.length;
+    this._likeCounter.textContent = this._likes.length;
   }
 }

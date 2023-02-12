@@ -17,8 +17,6 @@ import {
   formElementCard,
   buttonOpenAddCardPopup,
   buttonOpenEditProfilePopup,
-  nameInput,
-  aboutInput,
   profileAvatar,
   buttonEditAvatar,
 } from "../utils/constants.js";
@@ -127,9 +125,9 @@ Promise.all([api.getUserIfnoApi(), api.getInitialCards()])
 
 const handleEditProfilePopup = () => {
   const data = userInfo.getUserInfo();
-  nameInput.value = data.name;
-  aboutInput.value = data.about;
+  popupEditProfile.setInputValues(data);
   popupEditProfile.open();
+  formValidatorProfile.resetValidation();
 };
 
 const popupEditProfile = new PopupWithForm({
@@ -181,6 +179,7 @@ const popupWithCard = new PopupWithForm({
 buttonOpenAddCardPopup.addEventListener("click", () => {
   popupWithCard.open();
   formValidatorCard.disableSubmitButton();
+  formValidatorCard.resetValidation();
 });
 
 popupWithCard.setEventListeners();
@@ -209,6 +208,7 @@ const popupWithAvatar = new PopupWithForm({
 buttonEditAvatar.addEventListener("click", () => {
   popupWithAvatar.open();
   formValidatorAvatar.disableSubmitButton();
+  formValidatorAvatar.resetValidation();
 });
 
 popupWithAvatar.setEventListeners();
