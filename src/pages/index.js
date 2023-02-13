@@ -68,8 +68,8 @@ const createCard = (data) => {
           api
             .deleteLike(id)
             .then((res) => {
-              card.toggleButtonLike();
               card.countNewLike(res);
+              card.toggleButtonLike();
             })
             .catch((err) => {
               console.log(err);
@@ -78,8 +78,8 @@ const createCard = (data) => {
           api
             .addLike(id)
             .then((res) => {
-              card.toggleButtonLike();
               card.countNewLike(res);
+              card.toggleButtonLike();
             })
             .catch((err) => {
               console.log(err);
