@@ -35,6 +35,7 @@ export class Card {
     this._setEventListeners();
     this.toggleButtonLike();
 
+    this._likeCounter.textContent = this._likes.length;
     this._element.querySelector(".element__title").textContent = this._text;
     this._photoElement.src = this._imageLink;
     this._photoElement.alt = this._text;
